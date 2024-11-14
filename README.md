@@ -6,4 +6,5 @@
 5. ![image](https://github.com/user-attachments/assets/e280f958-d5db-41c4-8ae1-c0c209d8507f)
 6. Sychronous - In synchronous programming, operations are performed one after the other, in sequence. So, basically, each line of code waits for the previous one to finish before proceeding to the next.
    https://www.geeksforgeeks.org/synchronous-and-asynchronous-in-javascript/
-8. 
+8. ![image](https://github.com/user-attachments/assets/a6762eba-4132-4b0f-b90a-12b1130fa17c)
+

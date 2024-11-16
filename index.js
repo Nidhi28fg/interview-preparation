@@ -14,7 +14,7 @@ console.log(data); /* in node.js you can run file locally */
 const data2 = fs.readFileSync('b.txt', 'utf8');  /*file name*/
 
 console.log(data2);
-<<<<<<< HEAD
+
 
 
 
@@ -30,5 +30,4 @@ for (let i = 1; i <= 2; i++) {
 }
 
 console.log(ans);
-=======
->>>>>>> eb25fc3dd3cdb06c8c63e372522a454660bae2aa
+

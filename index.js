@@ -14,3 +14,18 @@ console.log(data); /* in node.js you can run file locally */
 const data2 = fs.readFileSync('b.txt', 'utf8');  /*file name*/
 
 console.log(data2);
+
+
+
+
+
+let ans = 0;
+for (let i = 1; i <= 2; i++) {
+  ans = ans + i;
+  /*First Iteration (i = 1):
+  ans = ans + i becomes ans = 0 + 1, so ans becomes 1.
+  Second Iteration (i = 2):
+  ans = ans + i becomes ans = 1 + 2, so ans becomes 3.*/
+}
+
+console.log(ans);

@@ -72,12 +72,26 @@ function timeout() {
 setTimeout(timeout, 15000); //The timeout callback function is scheduled to run after 15 seconds.
 console.log("Welcome to loupe.");
 
-
 // Therefore, the output in the console will be:
 // Hi!
 // Welcome to loupe.
 // [15 seconds later]
 // Click the button!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

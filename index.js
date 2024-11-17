@@ -1,18 +1,23 @@
 /*This task will take some time to complete.*/
 const fs = require('fs');
-/*The Node.js file system module allows you to work with the file system on your computer.
-To include the File System module, use the require() method:
+/*Node.js built-in fs module, which provides functions for working with the file system.
 Node.js फ़ाइल सिस्टम मॉड्यूल आपको अपने कंप्यूटर पर फ़ाइल सिस्टम के साथ काम करने की अनुमति देता है।
 फ़ाइल सिस्टम मॉड्यूल को शामिल करने के लिए, require()निम्न विधि का उपयोग करें:*/
-
+function print(err, data) {
+  console.log(data);
+}
 const data = fs.readFileSync('./a.txt', 'utf8');  /*file name,  utf8 translates numbers into binary.*/ 
 console.log(data); /* in node.js you can run file locally */
 const data2 = fs.readFileSync('b.txt', 'utf8');  /*file name*/
 console.log(data2);
 
+fs.readFile("a.txt", "utf-8", print); // Asynchronous The print function is passed as a callback to handle the result.
+fs.readFile("b.txt", "utf-8", print); // Asynchronous
 
-
-
+function readFile(filePath, encoding, op) {
+  // ... read file logic ...
+  op("Error!!", "hi there");
+}
 
 
 let ans = 0;

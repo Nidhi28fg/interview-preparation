@@ -61,3 +61,26 @@ function doOperation(a, b, op) {
 const ans = doOperation(1, 2, divide);
 console.log(ans);
 
+
+
+
+
+console.log("Hi!");
+function timeout() {
+  console.log("Click the button!");
+}
+setTimeout(timeout, 15000); //The timeout callback function is scheduled to run after 15 seconds.
+console.log("Welcome to loupe.");
+
+
+// Therefore, the output in the console will be:
+// Hi!
+// Welcome to loupe.
+// [15 seconds later]
+// Click the button!
+
+
+
+
+
+

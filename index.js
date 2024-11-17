@@ -6,6 +6,17 @@ Node.js फ़ाइल सिस्टम मॉड्यूल आपको �
 function print(err, data) {
   console.log(data);
 }
+
+
+function print(err, data) {
+  if (err) {
+    console.log("File not found!");
+  } else {
+    console.log(data);
+  }
+}
+
+
 const data = fs.readFileSync('./a.txt', 'utf8');  /*file name,  utf8 translates numbers into binary.*/ 
 console.log(data); /* in node.js you can run file locally */
 const data2 = fs.readFileSync('b.txt', 'utf8');  /*file name*/
@@ -23,10 +34,10 @@ function readFile(filePath, encoding, op) {
 let ans = 0;
 for (let i = 1; i <= 2; i++) {
   ans = ans + i;
-  /*First Iteration (i = 1):
-  ans = ans + i becomes ans = 0 + 1, so ans becomes 1.
-  Second Iteration (i = 2):
-  ans = ans + i becomes ans = 1 + 2, so ans becomes 3.*/
+  //First Iteration (i = 1):
+  //ans = ans + i becomes ans = 0 + 1, so ans becomes 1.
+  // Second Iteration (i = 2):
+  //ans = ans + i becomes ans = 1 + 2, so ans becomes 3.*/
 }
 
 console.log(ans);

@@ -26,3 +26,22 @@ for (let i = 1; i <= 2; i++) {
 
 console.log(ans);
 
+
+
+
+
+
+
+function subtract(a, b) {
+  return a - b;
+}
+function divide(a, b) {
+  return a / b;         //1/2
+}
+function doOperation(a, b, op) {
+  let val = op(a, b);  //divide(1,2)
+  return val;
+}
+const ans = doOperation(1, 2, divide);
+console.log(ans);
+

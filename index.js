@@ -126,9 +126,12 @@ console.log(date):
 
 
 
-
-
-
+let user = {
+  name: "harkirat",
+  age: 21
+};
+console.log(user.name);
+user.name = "raman"; //changes the value of the name property to "raman". Now, the user object has the following properties: name: "raman"
 
 
 

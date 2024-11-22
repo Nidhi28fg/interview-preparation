@@ -102,24 +102,27 @@ const rect = new Rectangle(2, 4);
 const area = rect.area();
 console.log(area);
 /*Key Concepts
-Class Declaration:
+**Class Declaration:**
 You declare a class using the class keyword.
 Inside a class, you define properties (variables) and methods (functions) that will belong to the objects created from this class.
 **Constructor:**
-A special method inside the class that is called when you create an instance (an object) of the class.
-It’s used to initialize the properties of the object.
+A constructor is a special method inside a class. It's called when you create an instance (an object) of the class. 
+The constructor is used to initialize the properties of the object.
 **Methods:**
-Functions that are defined inside the class and can be used by all instances of the class.
+Functions that are defined inside the class and can be used by all class instances.
 **Inheritance:**
 Classes can inherit properties and methods from other classes, allowing you to create a new class based on an existing one.
 **Static Methods:**
-Methods that belong to the class itself, not to class instances. You call them directly on the class.
-Getters and Setters:
+Methods that belong to the class itself, not to class instances. You call them directly in the class.
+**Getters and Setters:**
 Special methods that allow you to define how properties are accessed and modified.*/
 
 
 
 
+const date = new Date();
+console.log(date.getFullYear());
+console.log(date):
 
 
 

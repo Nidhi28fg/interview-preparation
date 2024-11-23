@@ -86,7 +86,7 @@ console.log("Welcome to loupe.");
 
 class Rectangle {
     constructor(width, height, color) {
-        this.width = width;
+        this.width = width; //react.width
         this.height = height;
         this.color = color;
     }

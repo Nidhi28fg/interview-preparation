@@ -151,19 +151,19 @@ console.log(firstName);
 // async/await: A syntactic sugar for working with Promises, making asynchronous code look more synchronous.
 
 
-// Promisified version
-
+// Promisified version(new promise and .then)
 function setTimeoutPromisified(ms) {
   return new Promise(resolve => {
     setTimeout(resolve, ms);   //object of promise class
   });
 }
-
 function callback() {
   console.log("3 seconds have passed");
 }
-
-setTimeoutPromisified(3000).then(callback);
+setTimeoutPromisified(3000).then(callback); //.then mean promise fuction
 
 // Callback version
 setTimeout(callback, 3000);
+
+
+

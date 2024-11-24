@@ -129,5 +129,10 @@ console.log(user.name);
 user.name = "raman"; //changes the value of the name property to "raman". Now, the user object has the following properties: name: "raman"
 
 
-
+const map = new Map(); //Maps are a powerful data structure in JavaScript that allow you to store key-value pairs. 
+map.set('name', 'Alice'); //Maps can use numbers, strings, objects, or any other data type as keys.
+map.set('age', 30);
+console.log(map.get('name'));
+const firstName = map.get('name'); //OTHER METHOD TO WRITE
+console.log(firstName);
 

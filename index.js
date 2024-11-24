@@ -111,7 +111,8 @@ The constructor is used to initialize the properties of the object.
 **Static Methods:** Methods that belong to the class itself, not to class instances. You call them directly in the class.
 **Getters and Setters:** Special methods that allow you to define how properties are accessed and modified.*/
 
-
+//Inheritance in classes -Inheritance in JavaScript classes allows one class to inherit properties and methods from another class. T
+//his mechanism enables code reuse, making it easier to create new classes that are based on existing ones, without having to duplicate code.
 
 
 const date = new Date();

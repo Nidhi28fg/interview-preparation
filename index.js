@@ -149,3 +149,21 @@ console.log(firstName);
 // catch(): Used to handle the rejected state.
 // finally(): Always executed, regardless of fulfilment or rejection.
 // async/await: A syntactic sugar for working with Promises, making asynchronous code look more synchronous.
+
+
+// Promisified version
+
+function setTimeoutPromisified(ms) {
+  return new Promise(resolve => {
+    setTimeout(resolve, ms);   //object of promise class
+  });
+}
+
+function callback() {
+  console.log("3 seconds have passed");
+}
+
+setTimeoutPromisified(3000).then(callback);
+
+// Callback version
+setTimeout(callback, 3000);

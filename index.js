@@ -66,7 +66,7 @@ console.log(ans);
 
 
 console.log("Hi!");
-function timeout() {
+function timeout() {     //callback the main function (callback main fuction)
   console.log("Click the button!");
 }
 setTimeout(timeout, 15000); //The timeout callback function is scheduled to run after 15 seconds.
@@ -136,3 +136,16 @@ console.log(map.get('name'));
 const firstName = map.get('name'); //OTHER METHOD TO WRITE
 console.log(firstName);
 
+
+
+//Promises provide a structured way to handle asynchronous operations in JavaScript, making your code more reliable and efficient.
+// States of a Promise:
+// Pending: Initial state, neither fulfilled nor rejected.
+// Fulfilled: Operation completed successfully, and the promise has value.
+// Rejected: Operation failed, and the promise has a reason for failure.
+
+// Key Concepts:
+// then(): Used to handle the fulfilled state.
+// catch(): Used to handle the rejected state.
+// finally(): Always executed, regardless of fulfilment or rejection.
+// async/await: A syntactic sugar for working with Promises, making asynchronous code look more synchronous.

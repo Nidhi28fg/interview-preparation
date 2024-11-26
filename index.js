@@ -169,3 +169,25 @@ setTimeout(callback, 3000);
 
 
 
+const fs = require('fs');
+
+function readTheFile(sendTheFinalValueHere) {     //This callback function somehow reaches here
+    fs.readFile('a.txt', 'utf-8', function (err, data) { //write here asycs program
+        sendTheFinalValueHere(data);
+    });
+}
+
+function readFile(fileName) {
+    // read the file and return its value
+    return new Promise(readTheFile);
+}
+
+const p = readFile();
+
+function callback(contents) {
+    console.log(contents);
+}
+
+p.then(callback);
+
+

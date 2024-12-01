@@ -191,3 +191,11 @@ function callback(contents) {
 p.then(callback);
 
 
+//Node -v: Checks the Node.js version.
+// open .: Opens the current directory in the file explorer.
+// cd Projects: Navigates to the "Projects" directory.
+// touch a.js: Creates an empty file named "a.js".
+// node a.js: Executes the JavaScript code in "a.js".
+  
+
+

@@ -199,3 +199,23 @@ p.then(callback);
   
 
 
+
+function isAnagram(str1, str2) {
+  // Convert strings to lowercase and split into arrays of characters
+  // The split() method is used to split a string into an array of substrings and returns the new array.
+  const arr1 = str1.toLowerCase().split('');
+  const arr2 = str2.toLowerCase().split('');
+
+  // Sort the arrays alphabetically
+  arr1.sort();
+  arr2.sort();
+
+  // Join the sorted arrays back into strings
+  const sortedStr1 = arr1.join('');
+  const sortedStr2 = arr2.join('');
+
+  // Compare the sorted strings
+  return sortedStr1 === sortedStr2;
+}
+
+module.exports = isAnagram;

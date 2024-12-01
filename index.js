@@ -239,3 +239,53 @@ module.exports = isAnagram;
 // Sort Arrays: Sorts the arrays alphabetically.
 // Join Arrays: Joins the sorted arrays back into strings.
 // Compare Strings: This function compares the sorted strings. If they are equal, the strings are anagrams; otherwise, they are not.
+
+
+function findLargestElement(numbers) {
+  let largestElement = numbers[0]; // Initialize largestElement with the first element (10)
+
+  for (let i = 1; i < numbers.length; i++) { // Iterate from the second element (index 1) to the end
+    if (numbers[i] > largestElement) { // Check if the current element is greater than the largestElement
+      largestElement = numbers[i]; // Update largestElement if the current element is greater
+    }
+  }
+
+  return largestElement;
+}
+
+const numbers = [10, 5, 20, 8, 15];
+const numbers = [3, 7, 2, 9, 1];
+const largest = findLargestElement(numbers);
+console.log(largest); // Output: 9
+console.log(largest); // Output: 20
+
+
+// In the first iteration: (10, 5, 20, 8, 15)
+// i = 1
+// numbers[i] = 5
+// largestElement = 10 (remains unchanged because 5 is not greater than 10)
+
+// In the second iteration:
+// i = 2
+// numbers[i] = 20
+// largestElement = 20 (updated because 20 is greater than 10) And so on...
+// After the loop finishes, the largestElement will hold the value 20, which is the largest number in the array. Therefore, the output of the console.log statement is 20.
+
+
+// Consider the array numbers = [3, 7, 2, 9, 1].
+// First iteration: i = 1
+// numbers[i] = 7
+// largestElement = 3 (initial value)
+// Since 7 is greater than 3, largestElement is updated to 7.
+
+// Second iteration:i = 2
+// numbers[i] = 2
+// largestElement = 7
+// Since 2 is not greater than 7, largestElement remains unchanged.
+
+// Third iteration:
+// i = 3
+// numbers[i] = 9
+// largestElement = 7
+// Since 9 is greater than 7, largestElement is updated to 9.
+// And so on, until the loop completes, and the final value of largestElement will be 9.

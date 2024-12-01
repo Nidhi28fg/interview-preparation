@@ -202,11 +202,12 @@ p.then(callback);
 
 function isAnagram(str1, str2) {
   // Convert strings to lowercase and split into arrays of characters
-  // The split() method is used to split a string into an array of substrings and returns the new array.
+  // The split() method splits a string into an array of substrings and returns the new array.
   const arr1 = str1.toLowerCase().split('');
   const arr2 = str2.toLowerCase().split('');
 
   // Sort the arrays alphabetically
+  // The sort() method sorts an array in place and returns the sorted array, modifying the input array.
   arr1.sort();
   arr2.sort();
 
@@ -219,3 +220,22 @@ function isAnagram(str1, str2) {
 }
 
 module.exports = isAnagram;
+
+const result = isAnagram('listen', 'silent');
+console.log(result); // Output: true
+
+
+
+function isAnagram(str1, str2) {
+  return str1.toLowerCase().split('').sort().join('') === 
+         str2.toLowerCase().split('').sort().join('');
+}
+
+module.exports = isAnagram; 
+
+
+// Convert to Lowercase: Converts both strings to lowercase to ensure case-insensitive comparison.
+// Split into Arrays: Splits each string into an array of characters.
+// Sort Arrays: Sorts the arrays alphabetically.
+// Join Arrays: Joins the sorted arrays back into strings.
+// Compare Strings: This function compares the sorted strings. If they are equal, the strings are anagrams; otherwise, they are not.

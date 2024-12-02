@@ -8,9 +8,11 @@
    https://www.geeksforgeeks.org/synchronous-and-asynchronous-in-javascript/
 8. ![image](https://github.com/user-attachments/assets/a6762eba-4132-4b0f-b90a-12b1130fa17c)
 
-9. ![image](https://github.com/user-attachments/assets/78c1f45d-56bf-4477-b20e-8a7603c82faa)
-10. ![image](https://github.com/user-attachments/assets/00998245-b49b-42a0-ab29-6f63b8b96423)
+margin: 0px auto;
+margin-top: 0px;
+margin-bottom: 0px;
+margin-left: auto;
+margin-right: auto;
 
-![image](https://github.com/user-attachments/assets/c01606e5-5614-4cb6-8d43-cdb8ce7d47f0)
 
 

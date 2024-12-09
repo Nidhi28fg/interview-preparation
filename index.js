@@ -293,3 +293,56 @@ console.log(largest); // Output: 20
 
 
 
+
+
+
+
+// Callback Hell: The traditional way of nesting setTimeout callbacks can lead to "callback hell", where code becomes hard to read and maintain.
+function setTimeoutPromisified(duration) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, duration);
+  });
+}
+
+// Promise chaining: This approach uses promises to create a more readable and manageable way of handling asynchronous operations.
+setTimeoutPromisified(1000)
+  .then(() => {
+    console.log("hi");
+    return setTimeoutPromisified(3000);
+  })
+  .then(() => {
+    console.log("hello");
+    return setTimeoutPromisified(5000);
+  })
+  .then(() => {
+    console.log("hi there");
+  });
+
+console.log("outside the callback hell");
+
+// Promise chaining
+const sortedString = str1.split("").sort().join("").toLowerCase();
+// asd => ["a", "s", "d"] => ["a", "d", "s"] => "asd"
+
+
+//async await syntax
+function setTimeoutPromisified(duration) {
+  return new Promise(function(resolve) {
+    setTimeout(resolve, duration);
+  });
+}
+
+async function solve() {
+  await setTimeoutPromisified(1000);
+  console.log("hi");
+
+  await setTimeoutPromisified(3000);
+  console.log("hello");
+
+  await setTimeoutPromisified(5000);
+  console.log("hi there");
+}
+
+solve();
+
+

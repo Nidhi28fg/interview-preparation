@@ -1,6 +1,95 @@
 # interview-preparation
 
 
+
+```html
+<html>
+<body id="topDiv">
+  <div>
+    hi there
+  </div>
+</body>
+
+<script>
+  const divEl = document.createElement("div");
+  divEl.innerHTML = "hi there";
+  const parentEl = document.querySelector("body");
+  parentEl.appendChild(divEl);
+</script>
+</html>
+```
+
+**Explanation:**
+
+**HTML:**
+
+- This code creates a basic HTML structure with a single `div` element having the ID `topDiv`. The `div` contains the text "hi there."
+
+**JavaScript:**
+
+- `const divEl = document.createElement("div");`: This line creates a new `div` element in JavaScript.
+- `divEl.innerHTML = "hi there";`: This line sets the inner HTML content of the newly created `div` element to "hi there."
+- `const parentEl = document.querySelector("body");`: This line selects the `body` element of the HTML document.
+- `parentEl.appendChild(divEl);`: This line appends the newly created `div` element as a child of the `body` element.
+
+**What this code does:**
+
+- Creates a new `div` element in JavaScript.
+- Sets the content of the new `div` to "hi there."
+- Appends the new `div` element to the `body` of the HTML document.
+
+**Result:**
+
+When you run this code, you will see two `div` elements with the text "hi there" on the page. The first one is the original `div` from the HTML, and the second one is the newly created `div` that was added by the JavaScript code.
+
+
+**HTML:**
+
+```html
+<html>
+<body>
+    <div id="topDiv">
+        hi there
+    </div>
+</body>
+</html>
+```
+
+**JavaScript:**
+
+```javascript
+let divEl = document.createElement("div");
+```
+
+**Explanation:**
+
+**HTML:**
+
+- This code creates a simple HTML structure with a single `div` element having the ID `topDiv`. The `div` contains the text "hi there."
+
+**JavaScript:**
+
+- The line `let divEl = document.createElement("div");` creates a new `div` element in the JavaScript code. This element is not yet part of the DOM.
+
+**What this code does:**
+
+- It creates a basic HTML page with a single `div` element.
+- It initializes a JavaScript variable `divEl` to hold a newly created `div` element.
+
+This code demonstrates the creation of a new HTML element using JavaScript's `createElement()` method. However, it doesn't add the newly created `div` element to the DOM yet. 
+
+To add the `div` element to the DOM, you would typically use methods like `appendChild()`, `insertBefore()`, or `insertAdjacentElement()`.
+
+**Example of adding the `divEl` to the DOM:**
+
+```javascript
+// Assuming you want to append the new div to the body
+document.body.appendChild(divEl);
+```
+
+This would add the newly created `div` as a child of the `body` element.
+
+
 **HTML:**
 
 ```html

@@ -1,5 +1,64 @@
 # interview-preparation
-Here's the code from the image:
+
+
+**HTML:**
+
+```html
+<h1>Todo list</h1>
+
+<div id="todoParent">
+    <div id="todo-1" style="display: flex;">
+        <h4>1. Take class</h4>
+        <button onclick="deleteTodo(1)">delete</button>
+    </div>
+    <div id="todo-2" style="display: flex;">
+        <h4>2. Go out to eat</h4>
+        <button onclick="deleteTodo(2)">delete</button>
+    </div>
+</div>
+
+<input type="text"></input>
+<button>Add Todo</button>
+```
+
+**JavaScript:**
+
+```javascript
+function deleteTodo(index) {
+    const element = document.getElementById("todo-" + index);
+    element.innerHTML = "";
+}
+```
+
+**Explanation:**
+
+**HTML:**
+
+- The code creates a heading with the text "Todo list."
+- A `div` with the ID `todoParent` is created to hold the todo items.
+- Two `div` elements with IDs `todo-1` and `todo-2` are created for each todo item. Each `div` contains an `h4` element for the task description and a `button` element with an `onclick` attribute that calls the `deleteTodo()` function.
+- The `button`'s `onclick` attribute passes the index of the task to the `deleteTodo()` function.
+- The last `div` contains an `input` element for adding new tasks and a `button` to trigger the addition (though the functionality for adding tasks is not shown in this code).
+
+**JavaScript:**
+
+- The `deleteTodo(index)` function takes an index as an argument.
+- It uses `document.getElementById()` to get the `div` element with the specified ID (e.g., `todo-1`).
+- It then sets the `innerHTML` of the element to an empty string, effectively removing the content but keeping the `div` element in the DOM.
+
+**How it works:**
+
+1. When a user clicks the "delete" button for a task, the `onclick` attribute calls the `deleteTodo()` function with the index of the task.
+2. The `deleteTodo()` function finds the corresponding `div` element using its ID.
+3. The `innerHTML` of the element is set to an empty string, removing the content but leaving the `div` element in the DOM.
+
+**Note:**
+
+- This code doesn't actually remove the `div` element from the DOM, so the deleted task will still be visible as an empty `div`.
+- To completely remove the element, you would need to use `parentNode.removeChild(element)`.
+
+This code demonstrates a basic to-do list with a delete functionality that clears the content of a task but doesn't remove the element itself.
+
 
 ```html
 <html>

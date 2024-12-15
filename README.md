@@ -1,5 +1,62 @@
 # interview-preparation
-Certainly, let's break down the concept of DOM manipulation based on the image you provided.
+Here's the code from the image:
+
+```html
+<html>
+<body id="body">
+    <h2>Todo 1</h2>
+    <h2>Todo 2</h2>
+    <h2>Todo 3</h2>
+    <button onclick="deleteRandomTodo()">Updating todo!</button>
+</body>
+
+<script>
+function deleteRandomTodo() {
+    const element = document.querySelector("h2");
+    const parentElement = element.parentNode;
+    parentElement.removeChild(element);
+}
+</script>
+</html>
+```
+
+**Explanation:**
+
+**HTML:**
+
+- The code creates three `h2` elements with the text "Todo 1," "Todo 2," and "Todo 3."
+- A button with the text "Updating todo!" is added, and its `onclick` attribute is set to call the `deleteRandomTodo()` function.
+
+**JavaScript:**
+
+```javascript
+function deleteRandomTodo() {
+    const element = document.querySelector("h2");
+    const parentElement = element.parentNode;
+    parentElement.removeChild(element);
+}
+```
+
+- The `deleteRandomTodo()` function is defined.
+- Inside the function:
+    - `document.querySelector("h2")` selects the first `h2` element found in the document.
+    - `element.parentNode` gets the parent element of the selected `h2` element.
+    - `parentElement.removeChild(element)` removes the selected `h2` element from the DOM.
+
+**How it works:**
+
+1. When the button is clicked, the `deleteRandomTodo()` function is called.
+2. The function selects the first `h2` element on the page.
+3. It then removes that `h2` element from its parent element, effectively deleting it from the page.
+
+**Note:**
+
+- This code will always delete the first `h2` element, regardless of its content.
+- If you want to delete a random `h2` element, you would need to modify the code to select a random element from the list of `h2` elements. 
+
+This code demonstrates a basic example of DOM manipulation, where an element is removed from the page based on a button click.
+
+concept of DOM manipulation -
 
 **DOM (Document Object Model)**
 

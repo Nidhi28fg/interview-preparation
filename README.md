@@ -1,5 +1,53 @@
 # interview-preparation
 
+```html
+<html>
+<body>
+  <input type="text">
+  <button onclick="addTodo()">Add todo!</button>
+
+  <script>
+    function addTodo() {
+      const inputEl = document.querySelector("input");
+      const value = inputEl.value;
+
+      const newDivEl = document.createElement("div");
+      newDivEl.innerHTML = value;
+
+      document.querySelector("body").appendChild(newDivEl);
+    }
+  </script>
+</body>
+</html>
+```
+
+**Explanation:**
+
+**HTML:**
+
+- This code creates a basic HTML structure with two elements inside the `body`:
+    - An `input` element of type "text" for user input.
+    - A `button` element with the text "Add todo!" and an `onclick` attribute set to the `addTodo()` function.
+
+**JavaScript:**
+
+- The `addTodo()` function is defined.
+- Inside the function:
+    - `const inputEl = document.querySelector("input");`: This line selects the `input` element.
+    - `const value = inputEl.value;`: This line gets the value entered by the user in the input field.
+    - `const newDivEl = document.createElement("div");`: This line creates a new `div` element.
+    - `newDivEl.innerHTML = value;`: This line sets the inner HTML of the new `div` element to the value entered by the user.
+    - `document.querySelector("body").appendChild(newDivEl);`: This line appends the newly created `div` element to the `body` of the HTML document.
+
+**What this code does:**
+
+- When the user enters text into the input field and clicks the "Add todo!" button:
+    - The `addTodo()` function is called.
+    - The value entered by the user is retrieved from the input field.
+    - A new `div` element is created and its inner HTML is set to the value from the input field.
+    - The new `div` element is added to the `body` of the HTML document.
+
+This code creates a simple to-do list application where users can add new tasks by entering text into the input field and clicking the "Add todo!" button. The added tasks will be displayed as `div` elements below the input field.
 
 
 ```html

@@ -346,3 +346,21 @@ async function solve() {
 solve();
 
 
+document.querySelectorAll("h4")[1].innerHTML = "asdasdasddsa"
+
+// Explanation:
+// document.querySelectorAll("h4"): This part selects all elements with the tag name h4 in the HTML document.
+// [1]: This index accesses the second h4 element in the list. (Remember, arrays in JavaScript are zero-indexed.)
+// .innerHTML: This property gets or sets the inner HTML content of the selected element.
+// = "asdasdasddsa": This assigns the string "asdasdasddsa" as the new inner HTML content of the second h4 element.
+
+
+
+let ctr = 0;
+
+function callback() {
+  document.querySelectorAll("h2")[1].innerHTML = ctr;
+  ctr = ctr + 1;
+}
+setInterval(callback, 1000);
+//Now this code runs after 1 second

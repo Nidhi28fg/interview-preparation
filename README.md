@@ -1,4 +1,68 @@
 # interview-preparation
+**Here's a breakdown of the code:**
+
+**HTML:**
+
+```html
+<body>
+  <input type="text">
+  <button onclick="addTodo()">Add todo!</button>
+</body>
+```
+
+- **Input field:** This allows the user to enter a new todo item.
+- **Button:** When clicked, it triggers the `addTodo()` function.
+
+**JavaScript:**
+
+```javascript
+let ctr = 0;
+
+function deleteTodo(index) {
+  const element = document.getElementById(index);
+  element.parentNode.removeChild(element);
+}
+
+function addTodo() {
+  const inputEl = document.querySelector("input");
+  const value = inputEl.value;
+
+  const newDivEl = document.createElement("div");
+  newDivEl.setAttribute("id", ctr);
+  newDivEl.innerHTML = "<div>" + value + "</div><button onclick='deleteTodo(" + ctr + ")'>delete</button>";
+  ctr = ctr + 1;
+
+  document.querySelector("body").appendChild(newDivEl);
+}
+```
+
+**Explanation:**
+
+1. **`ctr` variable:** This variable is used to generate unique IDs for each new todo item.
+2. **`deleteTodo(index)` function:**
+   - Takes an index as input.
+   - Finds the element with the given index using `document.getElementById()`.
+   - Removes the element from the DOM using `parentNode.removeChild()`.
+3. **`addTodo()` function:**
+   - Gets the value from the input field.
+   - Creates a new `div` element.
+   - Assigns a unique ID to the new `div` using the `ctr` variable.
+   - Sets the inner HTML of the `div` to include the user-entered value and a "delete" button. The `onclick` attribute of the "delete" button calls the `deleteTodo()` function with the current `ctr` value.
+   - Appends the new `div` to the `body` of the HTML document.
+   - Increments the `ctr` variable for the next todo item.
+
+**How it works:**
+
+1. User enters a todo item and clicks the "Add todo!" button.
+2. The `addTodo()` function is triggered.
+3. A new `div` is created with a unique ID and the user-entered text.
+4. A "delete" button is added to the `div`.
+5. The new `div` is added to the HTML body.
+6. If the user clicks the "delete" button, the `deleteTodo()` function is called with the appropriate index, removing the corresponding `div` from the DOM.
+
+This code implements a simple to-do list application with a feature to add and delete todo items.
+
+
 
 ```html
 <html>

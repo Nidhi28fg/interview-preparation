@@ -15,4 +15,21 @@ margin-left: auto;
 margin-right: auto;
 
 
+```html <div id="todo-1" style="display: flex;">
+  <h4>1. Take class</h4>
+  <button onclick="deleteTodo(1)">delete</button>
+</div>
+
+<div id="todo-2">
+  <h4>2. Go out to eat</h4>
+  <button onclick="deleteTodo(2)">delete</button>
+</div>
+
+<div>
+  <input type="text"></input>
+  <button>Add Todo</button>
+</div>
+
+
+
 

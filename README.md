@@ -1,5 +1,50 @@
 # interview-preparation
 
+```html
+<body>
+  <button onclick="createComplexDomElement()">Add</button>
+</body>
+
+<script>
+  function createComplexDomElement() {
+    const div = document.createElement("div");
+
+    const h1 = document.createElement("h1");
+    h1.innerHTML = "random text";
+
+    div.appendChild(h1);
+    document.querySelector("body").appendChild(div);
+  }
+</script>
+```
+
+**Explanation:**
+
+**HTML:**
+
+- This code creates a simple HTML structure with a single `button` element.
+- The `button` element has an `onclick` attribute set to the `createComplexDomElement()` function.
+
+**JavaScript:**
+
+- The `createComplexDomElement()` function is defined.
+- Inside the function:
+    - `const div = document.createElement("div");`: This line creates a new `div` element.
+    - `const h1 = document.createElement("h1");`: This line creates a new `h1` element.
+    - `h1.innerHTML = "random text";`: This line sets the inner HTML of the `h1` element to "random text".
+    - `div.appendChild(h1);`: This line appends the `h1` element as a child of the `div` element.
+    - `document.querySelector("body").appendChild(div);`: This line appends the `div` element to the `body` of the HTML document.
+
+**What this code does:**
+
+- When the user clicks the "Add" button:
+    - The `createComplexDomElement()` function is called.
+    - A new `div` element is created.
+    - A new `h1` element is created and its inner HTML is set to "random text".
+    - The `h1` element is appended as a child of the `div` element.
+    - The `div` element is appended to the `body` of the HTML document.
+
+This code demonstrates how to create a more complex DOM structure by nesting elements and appending them to the DOM.
 
 
 ```html

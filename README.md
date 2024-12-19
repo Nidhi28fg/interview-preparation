@@ -1,5 +1,66 @@
 # interview-preparation
-41.09
+
+
+
+```html
+<body>
+  <input type="text">
+  <button onclick="addTodo()">Add todo!</button>
+
+  <script>
+    function addTodo() {
+      const value = document.querySelector("input").value;
+
+      const spanEl = document.createElement("span");
+      const buttonEl = document.createElement("button");
+
+      spanEl.innerHTML = value;
+      buttonEl.innerHTML = "Delete";
+
+      const divEl = document.createElement("div");
+      divEl.appendChild(spanEl);
+      divEl.appendChild(buttonEl);
+
+      document.querySelector("body").appendChild(divEl);
+    }
+  </script>
+</body>
+```
+
+**Explanation:**
+
+**HTML:**
+
+- This code creates a basic HTML structure with two elements inside the `body`:
+    - An `input` element of type "text" for user input.
+    - A `button` element with the text "Add todo!" and an `onclick` attribute set to the `addTodo()` function.
+
+**JavaScript:**
+
+- The `addTodo()` function is defined.
+- Inside the function:
+    - `const value = document.querySelector("input").value;`: This line gets the value entered by the user from the input field.
+    - `const spanEl = document.createElement("span");`: This line creates a new `span` element to hold the todo text.
+    - `const buttonEl = document.createElement("button");`: This line creates a new `button` element for deleting the todo.
+    - `spanEl.innerHTML = value;`: This line sets the inner HTML of the `span` element to the value entered by the user.
+    - `buttonEl.innerHTML = "Delete";`: This line sets the inner HTML of the `button` element to "Delete".
+    - `const divEl = document.createElement("div");`: This line creates a new `div` element to hold both the `span` and `button`.
+    - `divEl.appendChild(spanEl);`: This line appends the `span` element as a child of the `div` element.
+    - `divEl.appendChild(buttonEl);`: This line appends the `button` element as a child of the `div` element.
+    - `document.querySelector("body").appendChild(divEl);`: This line appends the entire `div` element to the `body` of the HTML document.
+
+**What this code does:**
+
+- When the user enters text into the input field and clicks the "Add todo!" button:
+    - The `addTodo()` function is called.
+    - A new `div` element is created to hold the todo item.
+    - A `span` element is created to display the user-entered text.
+    - A "Delete" button is created.
+    - The `span` and `button` elements are appended to the `div` element.
+    - The `div` element is appended to the `body` of the HTML document.
+
+This code creates a simple to-do list application where users can add new tasks by entering text into the input field and clicking the "Add todo!" button. The added tasks are displayed as `div` elements, each containing the task text and a "Delete" button to remove the task.
+
 
 **HTML:**
 

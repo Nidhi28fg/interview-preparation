@@ -1,5 +1,69 @@
 # interview-preparation
-1:33
+```html
+<button onclick="addTodo()">Add todo!</button>
+
+<script>
+  let todos = [];
+
+  function addTodo() {
+    todos.push({
+      title: document.querySelector("input").value
+    });
+    render();
+  }
+
+  function render() {
+    for (let i = 0; i < todos.length; i++) {
+      const todo = todos[i];
+      const div = document.createElement("div");
+      const h1 = document.createElement("h1");
+      const button = document.createElement("button");
+
+      button.innerHTML = "Delete";
+      h1.innerHTML = todo.title;
+
+      div.append(h1);
+      div.append(button);
+
+      document.querySelector("body").appendChild(div);
+    }
+  }
+</script>
+```
+
+**Explanation:**
+
+**HTML:**
+
+- `<button onclick="addTodo()">Add todo!</button>`: This creates a button that, when clicked, calls the `addTodo()` function.
+
+**JavaScript:**
+
+1. **`let todos = [];`:** This declares an empty array named `todos` to store the list of todo items.
+
+2. **`addTodo()` function:**
+   - `todos.push({ title: document.querySelector("input").value });`: This line adds a new object to the `todos` array. The object has a property called `title` which is set to the value entered by the user in the input field.
+   - `render();`: This line calls the `render()` function to update the display of the todo list.
+
+3. **`render()` function:**
+   - This function iterates through the `todos` array using a `for` loop.
+   - For each `todo` object in the array:
+     - Creates a new `div` element.
+     - Creates a new `h1` element and sets its inner HTML to the `title` of the todo item.
+     - Creates a new `button` element with the text "Delete".
+     - Appends the `h1` and `button` elements to the `div` element.
+     - Appends the `div` element to the `body` of the HTML document.
+
+**How it works:**
+
+1. When the user clicks the "Add todo!" button, the `addTodo()` function is called.
+2. The `addTodo()` function creates a new object representing the todo item and adds it to the `todos` array.
+3. The `render()` function is called to update the display.
+4. The `render()` function loops through the `todos` array and creates a `div` element for each todo item, containing the title and a "Delete" button.
+5. The `div` elements are added to the `body` of the HTML document, displaying the list of todos on the page.
+
+This code implements a basic to-do list application with the ability to add new todo items and display them on the page. 
+
 ```html
 <body>
   <button onclick="createComplexDomElement()">Add</button>

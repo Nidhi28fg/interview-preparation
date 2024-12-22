@@ -1,4 +1,81 @@
 # interview-preparation
+
+Certainly, let's break down the code and its functionality based on the image you provided.
+
+**Code Breakdown:**
+
+**HTML:**
+
+```html
+<body>
+  <input type="text">
+  <button onclick="addTodo()">Add todo!</button>
+  <button onclick="deleteLastTodo()">Delete Last todo</button>
+  <button onclick="deleteFirstTodo()">Delete First todo</button>
+  <div id="todos"></div>
+</body>
+```
+
+- **Input Field:** Allows the user to enter text for a new todo.
+- **Buttons:**
+    - "Add todo!": Calls the `addTodo()` function when clicked.
+    - "Delete Last todo": Calls the `deleteLastTodo()` function when clicked.
+    - "Delete First todo": Calls the `deleteFirstTodo()` function when clicked.
+- **Div Element:** Has the ID "todos" and will be used to display the list of todos.
+
+**JavaScript:**
+
+```javascript
+let todos = [];
+
+function addTodo() {
+  todos.push({
+    title: document.querySelector("input").value
+  });
+  render();
+}
+
+function deleteLastTodo() {
+  todos.pop(); // remove the last element from the array
+  render();
+}
+
+function deleteFirstTodo() {
+  todos.splice(0, 1); // remove the first element from the array
+  render();
+}
+
+function render() {
+  // ... (implementation of render function, not shown in the image)
+}
+```
+
+- **`todos` Array:** An empty array to store the list of todo objects. Each object has a `title` property.
+- **`addTodo()` Function:**
+    - Gets the value entered in the input field.
+    - Creates a new todo object with the `title` and pushes it to the `todos` array.
+    - Calls the `render()` function to update the display.
+- **`deleteLastTodo()` Function:**
+    - Uses `pop()` to remove the last element from the `todos` array.
+    - Calls the `render()` function to update the display.
+- **`deleteFirstTodo()` Function:**
+    - Uses `splice()` to remove the first element from the `todos` array.
+    - Calls the `render()` function to update the display.
+- **`render()` Function:** (Not fully shown in the image)
+    - This function would be responsible for iterating through the `todos` array, creating HTML elements (e.g., `<div>` with the todo title and a "Delete" button) for each todo, and appending them to the `todos` div in the HTML.
+
+**Overall Functionality:**
+
+1. The user enters a todo in the input field and clicks "Add todo!".
+2. The `addTodo()` function adds the new todo to the `todos` array and calls `render()`.
+3. The `render()` function (not fully shown) creates HTML elements for each todo in the array and displays them in the `todos` div.
+4. The user can click "Delete Last todo" to remove the last added todo, or "Delete First todo" to remove the first todo.
+5. After each deletion, the `render()` function is called to update the displayed list.
+
+This code implements a basic to-do list application with features to add, delete the last todo, and delete the first todo. 
+
+**Note:** The `render()` function is crucial for displaying the todos in the HTML. Its implementation would involve creating and manipulating DOM elements based on the `todos` array.
+
 Here's the code from the image, with the `createTodoComponent` function added:
 
 ```javascript

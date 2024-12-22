@@ -2,6 +2,67 @@
 
 Certainly, let's break down the code and its functionality based on the image you provided.
 
+Here's the code from the image:
+
+```javascript
+function deleteTodoAt(index) {
+  todos.splice(index, 1);
+  render();
+}
+
+function createTodoComponent(todo, index) {
+  const div = document.createElement("div");
+  const h1 = document.createElement("h1");
+  const button = document.createElement("button");
+
+  button.innerHTML = "Delete";
+  button.setAttribute("onclick", "deleteTodoAt(" + index + ")");
+
+  h1.innerHTML = todo.title;
+  div.append(h1);
+  div.append(button);
+
+  return div;
+}
+
+// react
+function render() {
+  document.querySelector("#todos").innerHTML = "";
+  for (let i = 0; i < todos.length; i++) {
+    const element = createTodoComponent(todos[i], i);
+    document.querySelector("#todos").appendChild(element);
+  }
+}
+```
+
+**Explanation:**
+
+**`deleteTodoAt(index)` function:**
+
+- This function takes an `index` as an argument.
+- It removes the todo item at the given `index` from the `todos` array using the `splice()` method.
+- It then calls the `render()` function to update the displayed list.
+
+**`createTodoComponent(todo, index)` function:**
+
+- This function takes a `todo` object and its `index` as arguments.
+- It creates a `div` element, an `h1` element, and a `button` element.
+- It sets the inner HTML of the `h1` element to the `todo.title`.
+- It sets the inner HTML of the `button` to "Delete".
+- It sets the `onclick` attribute of the `button` to call the `deleteTodoAt()` function with the given `index`.
+- It appends the `h1` and `button` elements to the `div` element.
+- It returns the created `div` element.
+
+**`render()` function:**
+
+- This function clears the existing content of the `#todos` element by setting its `innerHTML` to an empty string.
+- It iterates through the `todos` array using a `for` loop.
+- In each iteration, it calls the `createTodoComponent` function to create a `div` element for the current todo, passing the `todo` object and its `index` as arguments.
+- It appends the created `div` element to the `#todos` element.
+
+This code implements a to-do list application with a reusable `createTodoComponent` function that creates individual todo elements with a "Delete" button that dynamically calls the `deleteTodoAt()` function with the correct index.
+
+
 **Code Breakdown:**
 
 **HTML:**

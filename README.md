@@ -1,4 +1,54 @@
 # interview-preparation
+Here's the code from the image, with the `createTodoComponent` function added:
+
+```javascript
+function createTodoComponent(todo) {
+  const div = document.createElement("div");
+  const h1 = document.createElement("h1");
+  const button = document.createElement("button");
+
+  button.innerHTML = "Delete";
+  h1.innerHTML = todo.title;
+
+  div.appendChild(h1);
+  div.appendChild(button);
+
+  return div;
+}
+
+// react
+function render() {
+  document.querySelector("#todos").innerHTML = "";
+
+  for (let i = 0; i < todos.length; i++) {
+    const element = createTodoComponent(todos[i]);
+    document.querySelector("#todos").appendChild(element);
+  }
+}
+```
+
+**Explanation:**
+
+**`createTodoComponent(todo)` function:**
+
+- This function takes a `todo` object as input.
+- It creates a `div` element, an `h1` element, and a `button` element.
+- It sets the inner HTML of the `h1` element to the `todo.title`.
+- It sets the inner HTML of the `button` element to "Delete".
+- It appends the `h1` and `button` elements to the `div` element.
+- Finally, it returns the `div` element.
+
+**`render()` function:**
+
+- This function is responsible for rendering the list of todos.
+- It first clears the existing content of the `#todos` element by setting its `innerHTML` to an empty string.
+- Then, it iterates through the `todos` array using a `for` loop.
+- In each iteration:
+    - It calls the `createTodoComponent` function to create a `div` element for the current todo.
+    - It appends the created `div` element to the `#todos` element.
+
+This code demonstrates a basic implementation of a to-do list with a `createTodoComponent` function to create individual todo elements. This approach can improve code organization and reusability. 
+
 ```html
 <button onclick="addTodo()">Add todo!</button>
 

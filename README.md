@@ -1,4 +1,5 @@
 # interview-preparation
+1:08
 The caret (^) symbol in the version number of a package in a `package.json` file is used to specify a **version range** for that package. 
 
 Here's how it works:

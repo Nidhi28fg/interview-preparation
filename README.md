@@ -1,4 +1,43 @@
 # interview-preparation
+Here's the code from the image, with some minor formatting adjustments for better readability:
+
+```javascript
+const fs = require("fs");
+
+function main(fileName) {
+  fs.readFile(fileName, "utf-8", function(err, data) {
+    // hello world
+    let total = 0;
+    for (let i = 0; i < data.length; i++) {
+      if (data[i] === " ") {
+        total++;
+      }
+    }
+    console.log(total + 1);
+  });
+}
+
+main("a.txt");
+```
+
+This code defines a function `main` that takes a filename as input. It then uses the `fs.readFile` method to read the contents of the file. 
+
+Inside the callback function for `fs.readFile`:
+
+1. **Initialization:** A variable `total` is initialized to 0.
+2. **Loop:** The code iterates through each character in the file's content (stored in the `data` variable).
+3. **Counting Spaces:** If the current character is a space (" "), the `total` variable is incremented.
+4. **Output:** After the loop, the value of `total` is printed to the console, plus 1. 
+
+Finally, the `main` function is called with the filename "a.txt" as an argument.
+
+**Explanation:**
+
+This code snippet counts the number of spaces in the file "a.txt". The `fs.readFile` method reads the file's contents, and the loop iterates through each character to count the spaces. The final output is the total number of spaces plus 1. 
+
+**Note:** The purpose of adding 1 to the `total` is not clear from the code alone. It might be related to a specific requirement or logic within the larger program.
+
+
 Certainly, let's explore the concept of **thenable** in JavaScript.
 
 **What is a Thenable?**

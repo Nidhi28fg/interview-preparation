@@ -1,4 +1,88 @@
 # interview-preparation
+Here are the codes from the image, with some minor formatting adjustments for better readability:
+
+**Doctor 1**
+
+```javascript
+const express = require('express');
+
+function calculateSum(a, b) {
+  return a + b;
+}
+
+const app = express();
+
+app.get('/', function (req, res) {
+  const a = req.query.a;
+  const b = req.query.b;
+  const ans = calculateSum(a, b);
+  res.send(ans);
+});
+
+app.listen(3001);
+```
+
+**Doctor 2**
+
+```javascript
+const express = require('express');
+
+function calculateSum(n) {
+  let ans = 0;
+  for (let i = 1; i < n; i++) {
+    ans = ans + i;
+  }
+  return ans;
+}
+
+const app = express();
+
+app.get('/', function (req, res) {
+  const n = req.query.n;
+  const ans = calculateSum(n);
+  res.send(ans);
+});
+
+app.listen(3000);
+```
+
+**Explanation:**
+
+**Doctor 1**
+
+1. **Import Express:** 
+   - `const express = require('express');` imports the Express.js library, which is used to create web servers in Node.js.
+
+2. **Define `calculateSum` Function:**
+   - `function calculateSum(a, b) { return a + b; }` defines a simple function that takes two numbers (`a` and `b`) as input and returns their sum.
+
+3. **Create Express App:**
+   - `const app = express();` creates an instance of the Express application.
+
+4. **Define GET Route:**
+   - `app.get('/', function (req, res) { ... });` defines a route handler for GET requests to the root URL (`/`).
+   - `req` represents the incoming request object, which contains information about the request, such as query parameters.
+   - `res` represents the response object, which is used to send data back to the client.
+   - Inside the route handler:
+     - `const a = req.query.a;` and `const b = req.query.b;` extract the values of the `a` and `b` query parameters from the request.
+     - `const ans = calculateSum(a, b);` calls the `calculateSum` function to get the sum of `a` and `b`.
+     - `res.send(ans);` sends the calculated sum as a response to the client.
+
+5. **Start Server:**
+   - `app.listen(3001);` starts the Express server on port 3001.
+
+**Doctor 2**
+
+This code follows a similar structure as Doctor 1, but with a different `calculateSum` function and a different query parameter (`n`).
+
+**Doctor 2's `calculateSum` Function:**
+
+- Takes a single number `n` as input.
+- Calculates the sum of numbers from 1 to `n-1`.
+- Returns the calculated sum.
+
+**In summary, both codes demonstrate how to create a basic HTTP server using Express.js.** They handle GET requests to the root URL, extract query parameters, perform simple calculations, and send the results as responses.
+
 Here's the code from the image, with some minor formatting adjustments for better readability:
 
 ```javascript

@@ -1,4 +1,79 @@
-# interview-preparation
+# interview-preparation'
+Here's the code based on the image, with explanations and comments:
+
+```javascript
+const express = require('express');
+const app = express();
+
+const users = [
+  {
+    name: "John",
+    kidneys: [
+      { healthy: false },
+      { healthy: true }
+    ]
+  }
+];
+
+app.get('/', function(req, res) {
+  const johnKidneys = users[0].kidneys;
+  let numberOfHealthyKidneys = 0; 
+
+  for (let i = 0; i < johnKidneys.length; i++) {
+    if (johnKidneys[i].healthy) {
+      numberOfHealthyKidneys++;
+    }
+  }
+
+  const numberOfUnhealthyKidneys = johnKidneys.length - numberOfHealthyKidneys;
+
+  res.json({
+    numberOfKidneys: johnKidneys.length,
+    numberOfHealthyKidneys,
+    numberOfUnhealthyKidneys
+  });
+});
+
+app.post('/', function(req, res) {
+  // Implement POST logic here
+});
+
+app.listen(3000, () => {
+  console.log('Server listening on port 3000');
+});
+```
+
+**Explanation:**
+
+1. **Import Express:**
+   - `const express = require('express');` imports the Express.js library.
+
+2. **Create Express App:**
+   - `const app = express();` creates an instance of the Express application.
+
+3. **Sample Data:**
+   - `const users = [...]` defines a sample array of users with their kidney information. This data would typically be stored in a database.
+
+4. **GET Route:**
+   - `app.get('/', function(req, res) { ... });` defines a route handler for GET requests to the root URL (`/`).
+   - `const johnKidneys = users[0].kidneys;` accesses the array of kidneys for the first user (John).
+   - `let numberOfHealthyKidneys = 0;` initializes a counter for healthy kidneys.
+   - The `for` loop iterates through the `johnKidneys` array.
+     - Inside the loop, if a kidney is `healthy`, the `numberOfHealthyKidneys` counter is incremented.
+   - `const numberOfUnhealthyKidneys = johnKidneys.length - numberOfHealthyKidneys;` calculates the number of unhealthy kidneys by subtracting the number of healthy kidneys from the total number of kidneys.
+   - `res.json({ ... });` sends a JSON response with the number of kidneys, number of healthy kidneys, and number of unhealthy kidneys.
+
+5. **POST Route:**
+   - `app.post('/', function(req, res) { ... });` defines the route handler for POST requests to the root URL.
+   - **Note:** The POST logic is not implemented in this code. You would need to add code here to handle the creation of new users or modifications to existing user data.
+
+6. **Start Server:**
+   - `app.listen(3000, () => { ... });` starts the server on port 3000 and logs a message to the console.
+
+This code provides a basic structure for the given image. You can expand on this by adding more features, improving error handling, and connecting it to a database.
+
+If you have a more specific task or requirement, please provide the details, and I can assist you with the implementation.
+
 Here's the code based on the image, with explanations and comments:
 
 ```javascript

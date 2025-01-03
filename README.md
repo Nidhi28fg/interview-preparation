@@ -1,4 +1,136 @@
 # interview-preparation
+Here's the code based on the image, with explanations and comments:
+
+```javascript
+const express = require('express');
+
+const app = express();
+
+// Sample data for in-memory hospital (you'd typically fetch this from a database)
+const users = [
+  {
+    name: 'John',
+    kidneys: [
+      { healthy: false },
+      { healthy: true }
+    ]
+  }
+];
+
+// GET / - Check user's kidneys
+app.get('/', (req, res) => {
+  // Logic to find the user based on request (e.g., by ID or name)
+  const user = users.find(user => user.name === 'John'); // Example: Find user by name
+
+  if (user) {
+    res.json({
+      name: user.name,
+      kidneyCount: user.kidneys.length,
+      healthyKidneys: user.kidneys.filter(kidney => kidney.healthy).length
+    });
+  } else {
+    res.status(404).send('User not found');
+  }
+});
+
+// POST / - Add a new kidney
+app.post('/', (req, res) => {
+  // Logic to find the user and add a new kidney to the user's array
+  const user = users.find(user => user.name === 'John'); // Example: Find user by name
+
+  if (user) {
+    user.kidneys.push({ healthy: true }); // Assuming new kidney is initially healthy
+    res.status(201).send('Kidney added successfully');
+  } else {
+    res.status(404).send('User not found');
+  }
+});
+
+// PUT / - Replace a kidney
+app.put('/', (req, res) => {
+  // Logic to find the user and replace the kidney with the provided data
+  const user = users.find(user => user.name === 'John'); // Example: Find user by name
+
+  if (user) {
+    // Assuming the request body provides the index of the kidney to replace and its health status
+    const { index, healthy } = req.body;
+    user.kidneys[index] = { healthy };
+    res.send('Kidney replaced successfully');
+  } else {
+    res.status(404).send('User not found');
+  }
+});
+
+// DELETE / - Remove a kidney
+app.delete('/', (req, res) => {
+  // Logic to find the user and remove a kidney from the user's array
+  const user = users.find(user => user.name === 'John'); // Example: Find user by name
+
+  if (user) {
+    // Assuming the request body provides the index of the kidney to remove
+    const { index } = req.body;
+    user.kidneys.splice(index, 1);
+    res.send('Kidney removed successfully');
+  } else {
+    res.status(404).send('User not found');
+  }
+});
+
+app.listen(3000, () => {
+  console.log('Server listening on port 3000');
+});
+```
+
+**Explanation:**
+
+1. **Import Express:**
+   - `const express = require('express');` imports the Express.js library.
+
+2. **Create Express App:**
+   - `const app = express();` creates an instance of the Express application.
+
+3. **Sample Data:**
+   - `const users = [...]` defines a sample array of users with their kidney information. This data would typically be stored in a database.
+
+4. **GET Route:**
+   - Handles GET requests to the root URL (`/`).
+   - Finds the user based on the request (you'd need to implement actual user lookup logic).
+   - Sends a JSON response with the user's name, kidney count, and number of healthy kidneys.
+
+5. **POST Route:**
+   - Handles POST requests to the root URL.
+   - Finds the user.
+   - Adds a new kidney to the user's `kidneys` array.
+   - Sends a success message.
+
+6. **PUT Route:**
+   - Handles PUT requests to the root URL.
+   - Finds the user.
+   - Replaces the kidney at the specified index with the new health status.
+   - Sends a success message.
+
+7. **DELETE Route:**
+   - Handles DELETE requests to the root URL.
+   - Finds the user.
+   - Removes the kidney at the specified index.
+   - Sends a success message.
+
+8. **Error Handling:**
+   - Each route checks if the user is found. If not, it sends a 404 Not Found response.
+
+9. **Start Server:**
+   - `app.listen(3000, () => { ... });` starts the server on port 3000 and logs a message to the console.
+
+**Note:**
+
+- This is a simplified example and needs further development based on your specific requirements.
+- You'll need to implement proper user authentication and authorization.
+- Error handling and input validation should be more robust.
+- Data should be persisted in a database instead of being stored in memory.
+
+This code provides a basic structure for creating an in-memory hospital API using Express.js. You can expand on this by adding more features, improving error handling, and connecting it to a database.
+
+
 Here are the codes from the image, with some minor formatting adjustments for better readability:
 
 **Doctor 1**
